@@ -10,7 +10,7 @@ public class MorseCode {
     private final String[] digitCodes = { "-----", ".----", "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----."};
     private final int[] digits = {0,1,2,3,4,5,6,7,8,9};
 
-    private String encodeChar(char letter) {
+    private String encode(char letter) {
         String code = "";
         for (int i = 0; i < alphabets.length; i++) {
             if(alphabets[i] == Character.toUpperCase(letter)) {
@@ -29,7 +29,7 @@ public class MorseCode {
         validateWord(word);
         StringBuilder encodedWord = new StringBuilder();
         for (int i = 0; i < word.length(); i++) {
-                encodedWord.append(encodeChar(word.charAt(i)));
+                encodedWord.append(encode(word.charAt(i)));
            if(word.charAt(i) != ' ' && i != word.length() - 1 && word.charAt(i + 1) != ' ')
                  encodedWord.append(' ');
         }
